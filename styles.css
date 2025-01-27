@@ -1,0 +1,437 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  box-sizing: border-box;
+  background-color: #222222;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.global-button {
+  text-transform: uppercase;
+  background-color: #fbf2f2;
+  padding: 1.2vw 2.2vw;
+  border-radius: 4px;
+  font-size: 20px;
+  letter-spacing: 4%;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.global-button:hover {
+  color: #f39c12;
+  background-color: #eadede;
+}
+
+input {
+  all: unset; /* Убирает все стили элемента */
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgb(34, 34, 34, 0.7);
+  display: flex;
+  justify-content: start;
+  color: #fbf2f2;
+  z-index: 1000;
+  display: flex;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-style: italic;
+  font-size: 1.6vw;
+  letter-spacing: 10%;
+  line-height: 2vw;
+  text-transform: uppercase;
+}
+
+header nav ul {
+  display: flex; /* Горизонтальное выравнивание */
+  gap: 2vw; /* Расстояние между элементами */
+  list-style: none;
+  margin: 0;
+  padding-left: 4vw;
+}
+
+header nav ul li {
+  display: inline; /* Выравнивание по горизонтали */
+}
+
+header nav a {
+  color: #fbf2f2;
+  text-decoration: none;
+  font-size: 1vw;
+
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #f39c12;
+}
+
+.logo {
+  font-family: Prata, sans-serif;
+  padding: 0 8vw;
+  font-weight: 400;
+  font-size: 1.8vw;
+  line-height: 4vw;
+  letter-spacing: 3%;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  position: relative;
+  margin: 3vw 0 0 10vw;
+  color: #fbf2f2;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 3.8vw;
+  font-family: Prata, sans-serif;
+  line-height: 1.5;
+  max-width: 700px;
+  padding-top: 4.5vw;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 2vw;
+  margin-top: 1vw;
+}
+
+.hero ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  padding-right: 3vw;
+}
+
+.hero ul li {
+  margin-bottom: 1rem;
+  padding-left: 4vw;
+  padding-right: 1vw;
+  position: relative;
+  font-size: 1.2vw;
+  background: rgba(40, 40, 41, 0.7);
+  display: inline-block;
+}
+.hero ul li span {
+  font-size: 1.8vw;
+  font-family: Prata, sans-serif;
+  vertical-align: middle;
+}
+
+.hero ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2vw; /* Ширина маркера */
+  height: 2vw; /* Высота маркера */
+  background-image: url("img/first_point.svg"); /* Подключаем SVG */
+  background-size: contain; /* Умещаем изображение в пределах заданных размеров */
+  background-repeat: no-repeat; /* Убираем повторение */
+}
+
+.hero-button {
+  margin-bottom: 1.46vw;
+}
+
+.hero-image {
+  position: absolute;
+  top: -7vw;
+  right: 0;
+  width: 35vw;
+  height: 117.6%;
+  z-index: 1000;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cards Section */
+.cards {
+  display: flex;
+  justify-content: space-between; /* Разделяет компоненты по горизонтали */
+  align-items: center; /* Выравнивает компоненты по центру */
+  width: 100%;
+  background-color: rgba(40, 40, 41, 1);
+  box-sizing: border-box;
+  padding-top: 4vw;
+}
+
+.cards-image {
+  flex-grow: 1; /* Эти блоки занимают все доступное пространство */
+  max-width: 50%; /* Ограничиваем максимальную ширину каждого изображения до 50% */
+  height: 100%;
+  background-color: rgba(40, 40, 41, 1); /* Фон по умолчанию */
+  object-fit: cover;
+}
+
+.cards-image img {
+  width: 100%; /* Изображение растягивается на весь контейнер */
+  height: 100%;
+}
+
+.cards-content {
+  width: 900px; /* Центральный блок фиксированной ширины */
+  box-sizing: border-box;
+  margin: 0 3em;
+  font-size: 1.2vw;
+  line-height: 33.6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-content ul li {
+  padding: 1.5vw 1vw 1vw 4vw;
+  position: relative;
+  color: #fbf2f2;
+  border-bottom: 2px solid #6e6c6c;
+}
+.cards-content ul li:last-child {
+  border-bottom: none;
+}
+
+.cards-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.4vw; /* Ширина маркера */
+  height: 2vw; /* Высота маркера */
+  background-image: url("img/second_point.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cards-button {
+  width: 100%;
+  padding: auto;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1020px) {
+  .cards {
+    flex-direction: column; /* При уменьшении экрана компоненты будут располагаться друг под другом */
+  }
+
+  .cards-image img {
+    display: none; /* Скрываем изображения на маленьких экранах */
+  }
+
+  .cards-image {
+    background-color: rgba(40, 40, 41, 1); /* Оставляем только фон */
+    height: 100px; /* Высота изображений при скрытии */
+  }
+
+  .cards-content {
+    width: 100%; /* Центральный блок становится по ширине 100% */
+  }
+}
+
+/* Form Section */
+.form-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  background-color: rgba(40, 40, 41, 1);
+  text-align: center;
+  padding: 6vw 8vw;
+  position: relative;
+}
+
+.form-container {
+  display: flex;
+  background-color: #fbf2f2;
+  background-image: url("img/form_background.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  align-items: start;
+  border-radius: 30px;
+  padding: 0;
+  width: 80vw;
+  height: 28vw;
+}
+
+.top-img {
+  position: absolute;
+  top: 43%;
+  left: 60%;
+  transform: translate(-50%, -49.8%);
+  white-space: nowrap;
+}
+
+.top-img img {
+  width: 23vw;
+}
+
+.form-container form {
+  margin: 2vw 5vw;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container h2 {
+  text-align: start;
+  font-family: Prata, sans-serif;
+  font-size: 2.5vw;
+  font-style: inherit;
+  margin-bottom: 1vw;
+  color: rgb(86, 86, 86);
+}
+
+.input-container {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: start;
+}
+
+.input-container input {
+  padding: 8px 15px;
+  border: 2px solid rgba(214, 214, 214, 1);
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgb(86, 86, 86);
+  padding: 10px;
+}
+
+/* Скрываем стандартный чекбокс */
+.custom-checkbox input {
+  display: none;
+}
+.checkbox {
+  width: 100%;
+  text-align: start;
+  padding-top: 10px;
+}
+/* Стилизованный квадрат чекбокса */
+.custom-checkbox span {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(214, 214, 214, 1);
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Добавляем галочку */
+.custom-checkbox span::after {
+  content: "";
+  width: 8px;
+  height: 14px;
+  border: solid rgba(40, 40, 41, 1);
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* При активном состоянии */
+.custom-checkbox input:checked + span {
+  background-color: none;
+  border: none;
+}
+
+/* Показываем галочку */
+.custom-checkbox input:checked + span::after {
+  opacity: 1;
+}
+
+/* При наведении */
+.custom-checkbox span:hover {
+  border-color: #555;
+}
+
+.form-button {
+  background-color: black;
+  color: #fbf2f2;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer ul {
+  display: flex; /* Горизонтальное выравнивание */
+  justify-content: center;
+  gap: 1rem; /* Расстояние между ссылками */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
