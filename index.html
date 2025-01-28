@@ -11,6 +11,8 @@
       href="img/second_point.svg"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles-media.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +24,8 @@
     <header class="header">
       <div class="logo">LOREM</div>
       <nav class="nav">
-        <ul>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+        <ul class="nav-menu">
           <li><a href="#">Consectetur</a></li>
           <li><a href="#">Sit Amet</a></li>
           <li><a href="#">Eiusmod Tempor</a></li>
@@ -105,13 +108,12 @@
           <button class="form-button global-button" type="submit">
             Submit Form
           </button>
+          <div class="top-img"><img src="img/woman.png" alt="Top img" /></div>
         </form>
-        <div class="top-img"><img src="img/woman.png" alt="Top img" /></div>
       </div>
     </section>
     <footer class="footer">
-      <div class="footer-top">
-        <div class="footer-logo">LOREM</div>
+      <div class="footer-nav">
         <nav>
           <ul>
             <li><a href="#">Consectetur</a></li>
@@ -120,11 +122,24 @@
           </ul>
         </nav>
       </div>
+      <div class="footer-middle">
+        <div class="logo">LOREM</div>
+        <div class="media-icons">
+          <a><img src="img/icons/inst.svg" alt="Instagram link" /></a>
+          <a><img src="img/icons/tiktok.svg" alt="TikTok link" /></a>
+          <a><img src="img/icons/link.svg" alt="LinkedIn link" /></a>
+          <a><img src="img/icons/facebook.svg" alt="Facebook link" /></a>
+          <a><img src="img/icons/telegram.svg" alt="Telegram link" /></a>
+          <a><img src="img/icons/youtube.svg" alt="YouTube link" /></a>
+        </div>
+        <button class="global-button">Order</button>
+      </div>
       <div class="footer-bottom">
         <p>&copy; 2024. Copyright</p>
         <p>Privacy policy</p>
         <p>Terms of use</p>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

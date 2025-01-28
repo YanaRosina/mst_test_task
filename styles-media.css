@@ -1,0 +1,300 @@
+@media (max-width: 1730px) {
+  nav a {
+    font-size: 16px;
+  }
+
+  nav ul {
+    padding-left: 3vw;
+  }
+
+  .logo {
+    font-size: 28px;
+    padding: 10px 2vw 0 8vw;
+  }
+
+  .hero {
+    margin: 2vw 0 0 8vw;
+  }
+}
+
+@media (max-width: 1600px) {
+  .hero-image {
+    width: 35vw;
+    height: 117%;
+    z-index: 1000;
+  }
+  .form-section {
+    padding: 4vw 7vw;
+  }
+  .cards-content {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .hero-image {
+    top: 0;
+    width: 45%;
+    height: 100%;
+    z-index: 0;
+  }
+  nav ul li {
+    padding: 0.3rem 1rem;
+  }
+  .hero ul {
+    width: 400px;
+  }
+  .hero ul li {
+    font-size: 16px;
+  }
+  .hero ul li span {
+    font-size: 18px;
+  }
+
+  .cards {
+    flex-direction: column;
+
+    padding: 0 7vw;
+  }
+
+  .cards-image img {
+    display: none; /* Скрываем изображения на маленьких экранах */
+  }
+
+  .cards-image {
+    background-color: rgba(40, 40, 41, 1); /* Оставляем только фон */
+    height: 100px; /* Высота изображений при скрытии */
+  }
+
+  .cards-content {
+    width: 100%; /* Центральный блок становится по ширине 100% */
+    font-size: 16px;
+  }
+  .form-container form {
+    width: 60%;
+
+    margin: 0 5vw;
+  }
+  .top-img {
+    display: none;
+  }
+}
+
+@media (max-width: 812px) {
+  .header {
+    position: sticky;
+    top: 0;
+    background-color: rgb(34, 34, 34, 0.7);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: #fbf2f2;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 20px;
+    padding: 5px 2vw 0 2vw;
+  }
+
+  nav {
+    position: relative;
+    margin: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    background-color: rgba(34, 34, 34, 1);
+  }
+
+  .nav-menu.active {
+    transform: translateY(0); /* Меню появляется снизу */
+    opacity: 1;
+    background-color: rgba(34, 34, 34, 0.9);
+    pointer-events: auto; /* Делаем меню доступным для кликов */
+    width: 230px;
+  }
+
+  .hamburger.open {
+    transform: rotate(90deg);
+  }
+
+  nav ul li {
+    display: block;
+    padding: 0.5rem 1rem;
+    width: 220px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #f39c12;
+  }
+
+  .hero-content h1 {
+    width: 200px;
+    font-size: 26px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-content ul li::before {
+    width: 20px; /* Ширина маркера */
+    height: 20px; /* Высота маркера */
+  }
+  .hero-content ul li {
+    padding-left: 40px;
+  }
+
+  .hero-image {
+    width: 50%;
+  }
+
+  .cards {
+    flex-direction: row;
+    padding: 50px 0;
+  }
+  .cards ul li {
+    padding-left: 50px;
+  }
+  .cards ul li::before {
+    width: 28px; /* Ширина маркера */
+    height: 22px;
+  }
+
+  .form-container {
+    background-image: none;
+  }
+  .form-container form {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .form-container form h2 {
+    font-size: 22px;
+  }
+
+  .form-section {
+    padding-bottom: 5vw;
+  }
+  footer .footer-nav {
+    border-top: 1px solid #fbf2f2;
+    border-bottom: 1px solid #fbf2f2;
+  }
+
+  .footer-nav nav {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .footer-nav nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-nav nav ul li {
+    font-size: 16px;
+
+    width: 100%;
+  }
+
+  .footer-middle {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 30px;
+  }
+  .footer-middle .media-icons {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 570px) {
+  .hero-image {
+    display: none;
+  }
+
+  .hero {
+    display: block;
+    padding: 30px;
+    margin: 0;
+  }
+
+  .hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    width: 90vw;
+  }
+
+  .hamburger {
+    font-size: 1.5rem;
+  }
+
+  .cards-content {
+    margin: 0;
+    padding: 0 30px;
+  }
+
+  .form-container {
+    background-image: none;
+    width: 300px;
+  }
+  .form-container form {
+    width: 100%;
+    padding-right: 0;
+    border-radius: 5px;
+  }
+
+  .form-container form h2 {
+    font-size: 18px;
+  }
+  .form-container form .input-container input {
+    padding: 4px 10px;
+  }
+  .form-container form .form-button {
+    padding: 4px 10px;
+  }
+  .footer-nav nav ul li a {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .footer-nav nav {
+    letter-spacing: 1%;
+  }
+  .media-icons {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+}

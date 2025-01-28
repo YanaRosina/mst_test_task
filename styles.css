@@ -35,7 +35,12 @@ body {
 }
 
 input {
-  all: unset; /* Убирает все стили элемента */
+  all: unset;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Header */
@@ -50,7 +55,7 @@ header {
   display: flex;
 }
 
-header nav {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,28 +67,40 @@ header nav {
   text-transform: uppercase;
 }
 
-header nav ul {
-  display: flex; /* Горизонтальное выравнивание */
-  gap: 2vw; /* Расстояние между элементами */
+nav ul {
+  display: flex;
+  gap: 2vw;
   list-style: none;
   margin: 0;
   padding-left: 4vw;
 }
 
-header nav ul li {
-  display: inline; /* Выравнивание по горизонтали */
+nav ul li {
+  display: inline;
 }
 
-header nav a {
+nav a {
   color: #fbf2f2;
-  text-decoration: none;
   font-size: 1vw;
-
   transition: color 0.3s ease;
 }
 
-header nav a:hover {
+nav a:hover {
   color: #f39c12;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fbf2f2;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger:focus {
+  outline: none;
 }
 
 .logo {
@@ -103,6 +120,22 @@ header nav a:hover {
   position: relative;
   margin: 3vw 0 0 10vw;
   color: #fbf2f2;
+  overflow: visible;
+}
+
+.hero-image {
+  position: absolute;
+  top: -7vw;
+  right: 0;
+  width: 35vw;
+  height: 117.6%;
+  z-index: 1000;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-text {
@@ -128,6 +161,7 @@ header nav a:hover {
   padding: 0;
   margin: 0 0 1.5rem;
   padding-right: 3vw;
+  width: 500px;
 }
 
 .hero ul li {
@@ -151,37 +185,22 @@ header nav a:hover {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 2vw; /* Ширина маркера */
-  height: 2vw; /* Высота маркера */
-  background-image: url("img/first_point.svg"); /* Подключаем SVG */
-  background-size: contain; /* Умещаем изображение в пределах заданных размеров */
-  background-repeat: no-repeat; /* Убираем повторение */
+  width: 2vw;
+  height: 2vw;
+  background-image: url("img/first_point.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .hero-button {
   margin-bottom: 1.46vw;
 }
 
-.hero-image {
-  position: absolute;
-  top: -7vw;
-  right: 0;
-  width: 35vw;
-  height: 117.6%;
-  z-index: 1000;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* Cards Section */
 .cards {
   display: flex;
-  justify-content: space-between; /* Разделяет компоненты по горизонтали */
-  align-items: center; /* Выравнивает компоненты по центру */
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   background-color: rgba(40, 40, 41, 1);
   box-sizing: border-box;
@@ -189,20 +208,20 @@ header nav a:hover {
 }
 
 .cards-image {
-  flex-grow: 1; /* Эти блоки занимают все доступное пространство */
-  max-width: 50%; /* Ограничиваем максимальную ширину каждого изображения до 50% */
+  flex-grow: 1;
+  max-width: 50%;
   height: 100%;
-  background-color: rgba(40, 40, 41, 1); /* Фон по умолчанию */
+  background-color: rgba(40, 40, 41, 1);
   object-fit: cover;
 }
 
 .cards-image img {
-  width: 100%; /* Изображение растягивается на весь контейнер */
+  width: 100%;
   height: 100%;
 }
 
 .cards-content {
-  width: 900px; /* Центральный блок фиксированной ширины */
+  width: 900px;
   box-sizing: border-box;
   margin: 0 3em;
   font-size: 1.2vw;
@@ -249,25 +268,6 @@ header nav a:hover {
   margin-bottom: 10px;
 }
 
-@media (max-width: 1020px) {
-  .cards {
-    flex-direction: column; /* При уменьшении экрана компоненты будут располагаться друг под другом */
-  }
-
-  .cards-image img {
-    display: none; /* Скрываем изображения на маленьких экранах */
-  }
-
-  .cards-image {
-    background-color: rgba(40, 40, 41, 1); /* Оставляем только фон */
-    height: 100px; /* Высота изображений при скрытии */
-  }
-
-  .cards-content {
-    width: 100%; /* Центральный блок становится по ширине 100% */
-  }
-}
-
 /* Form Section */
 .form-section {
   width: 100%;
@@ -290,25 +290,34 @@ header nav a:hover {
   border-radius: 30px;
   padding: 0;
   width: 80vw;
-  height: 28vw;
+  height: auto;
+  clip-path: inset(-50px 0 0 0);
 }
 
 .top-img {
   position: absolute;
-  top: 43%;
+  top: 49%;
   left: 60%;
   transform: translate(-50%, -49.8%);
   white-space: nowrap;
 }
 
 .top-img img {
-  width: 23vw;
+  width: 24vw;
 }
 
 .form-container form {
-  margin: 2vw 5vw;
-  width: 40%;
+  margin: 0 5vw;
+  padding-bottom: 2vw;
+  width: 50%;
+  height: 100%;
   display: flex;
+  background: linear-gradient(
+    to right,
+    rgba(251, 242, 242, 1) 80%,
+    rgba(251, 242, 242, 0) 100%
+  );
+  padding-right: 10vw;
   flex-direction: column;
   align-items: center;
 }
@@ -406,32 +415,58 @@ header nav a:hover {
 
 /* Footer */
 footer {
-  background-color: #000;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: #fbf2f2;
+  width: 100%;
 }
 
-footer ul {
-  display: flex; /* Горизонтальное выравнивание */
+footer .footer-nav {
+  align-content: center;
+  width: 100%;
+  border-top: 2px solid #fbf2f2;
+  border-bottom: 2px solid #fbf2f2;
+  padding: 0.3vw 0;
+}
+
+.footer-nav nav {
+  display: flex;
   justify-content: center;
-  gap: 1rem; /* Расстояние между ссылками */
-  list-style: none;
-  margin: 0;
+  font-size: 1.4vw;
+}
+
+.footer-nav nav ul {
+  padding-left: 0;
+  gap: 3vw;
+}
+
+.footer-bottom,
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw 10vw;
+  align-items: center;
+}
+
+.footer-middle .logo {
   padding: 0;
+  margin: 0;
+}
+.footer-middle .media-icons {
+  padding-left: 50px;
+}
+.footer-middle .media-icons a {
+  padding: 0 8px;
 }
 
-footer ul li {
-  display: inline;
+.footer-bottom {
+  padding-top: 0;
 }
 
-footer a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+.footer-bottom p {
+  cursor: pointer;
 }
 
-footer a:hover {
-  text-decoration: underline;
+.footer-bottom p:first-child {
+  cursor: auto;
 }
